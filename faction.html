@@ -4,45 +4,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개노답 하렘 다크 판타지</title>
+    <title>개노답 하렘 다크 판타지 - 세력</title>
     <link rel="icon" type="image/png" href="img/웹로고.png">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@500;700&display=swap"
         rel="stylesheet">
+
+    <!-- CSS (Responsive Loading) -->
+    <link rel="stylesheet" href="style.css" media="(min-width: 769px)">
+    <link rel="stylesheet" href="mobile-style.css" media="(max-width: 768px)">
+
+    <!-- View Switcher Logic -->
+    <style>
+        #mobile-view {
+            display: none;
+        }
+
+        #desktop-view {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            #desktop-view {
+                display: none;
+            }
+
+            #mobile-view {
+                display: block;
+            }
+
+            body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: #202020;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="main-container">
-        <!-- Content Area -->
-        <div class="faction-content">
-            <!-- Top Title Image -->
-            <img class="page-title-img" src="img/세력.png" alt="Page Title" />
+    <!-- ==========================================
+         DESKTOP VIEW (≥ 769px)
+         ========================================== -->
+    <div id="desktop-view">
+        <div class="main-container">
+            <!-- Content Area -->
+            <div class="faction-content">
+                <!-- Top Title Image -->
+                <img class="page-title-img" src="img/세력.png" alt="Page Title" />
 
-            <!-- Faction Cards -->
-            <div class="faction-card pos-1">
-                <img class="faction-img" src="https://placehold.co/110x110" alt="Faction" />
+                <!-- Faction Cards -->
+                <div class="faction-card pos-1">
+                    <img class="faction-img" src="https://placehold.co/110x110" alt="Faction" />
+                    <div class="faction-name">플랫</div>
+                    <div class="faction-desc">대륙 최대의 도적 길드입니다. 국고를 털어 빈민을 구제한다는 소문이 있던데, 여러분은 플랫에게 신세 질 일 없게 열심히 사십시오.
+                    </div>
+                </div>
+
+                <div class="faction-card pos-2">
+                    <img class="faction-img" src="https://placehold.co/110x110" alt="Faction" />
+                    <div class="faction-name">휴즈</div>
+                    <div class="faction-desc">세력 대륙 최대의 여전사 길드입니다. 우는 아기 몬스터도 뚝 그치게 만듭니다. 뚝배기를 날려 버려서요.</div>
+                </div>
+
+                <div class="faction-card pos-3">
+                    <img class="faction-img" src="https://placehold.co/110x110" alt="Faction" />
+                    <div class="faction-name">무영단(無影團)</div>
+                    <div class="faction-desc">인간이면서도 마왕의 편에 서서 힘에 편승하는 영리하고 똑똑하기 그지없는 집단입니다. 폐급 파티에게 구원을 바랄 바에야 인간을 배신하는
+                        편이
+                        현명하죠.</div>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <script src="header.js"></script>
+            <script>renderHeader('faction');</script>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MOBILE VIEW (≤ 768px)
+         ========================================== -->
+    <div id="mobile-view">
+        <!-- Header -->
+        <header class="mobile-header">
+            <a href="index.html">
+                <img class="mobile-logo" src="img/로고.png" alt="Logo">
+            </a>
+            <div class="mobile-menu-icon" id="mobile-menu-btn">
+                <div class="menu-icon-inner">
+                    <div class="menu-bars"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="party.html" class="mobile-nav-item">파티원</a>
+                <a href="key figures.html" class="mobile-nav-item">주요인물</a>
+                <a href="faction.html" class="mobile-nav-item" style="color: #c5a059;">세력</a>
+                <a href="monster.html" class="mobile-nav-item">몬스터</a>
+                <img class="mobile-nav-play-btn" src="img/플레이.png" alt="Game Start"
+                    onclick="window.open('https://share.crack.wrtn.ai/v3snwy', '_blank')" />
+            </div>
+        </div>
+
+        <!-- Content Wrapper -->
+        <div class="faction-wrapper">
+            <!-- Card 1 -->
+            <div class="faction-card">
+                <img class="faction-img" src="https://placehold.co/110x110" alt="Faction Image">
                 <div class="faction-name">플랫</div>
                 <div class="faction-desc">대륙 최대의 도적 길드입니다. 국고를 털어 빈민을 구제한다는 소문이 있던데, 여러분은 플랫에게 신세 질 일 없게 열심히 사십시오.</div>
             </div>
-
-            <div class="faction-card pos-2">
-                <img class="faction-img" src="https://placehold.co/110x110" alt="Faction" />
+            <!-- Card 2 -->
+            <div class="faction-card">
+                <img class="faction-img" src="https://placehold.co/110x110" alt="Faction Image">
                 <div class="faction-name">휴즈</div>
                 <div class="faction-desc">세력 대륙 최대의 여전사 길드입니다. 우는 아기 몬스터도 뚝 그치게 만듭니다. 뚝배기를 날려 버려서요.</div>
             </div>
-
-            <div class="faction-card pos-3">
-                <img class="faction-img" src="https://placehold.co/110x110" alt="Faction" />
+            <!-- Card 3 -->
+            <div class="faction-card">
+                <img class="faction-img" src="https://placehold.co/110x110" alt="Faction Image">
                 <div class="faction-name">무영단(無影團)</div>
                 <div class="faction-desc">인간이면서도 마왕의 편에 서서 힘에 편승하는 영리하고 똑똑하기 그지없는 집단입니다. 폐급 파티에게 구원을 바랄 바에야 인간을 배신하는 편이
                     현명하죠.</div>
             </div>
         </div>
 
-        <!-- Header -->
-        <script src="header.js"></script>
-        <script>renderHeader('faction');</script>
+        <!-- Script -->
+        <script src="mobile-script.js"></script>
     </div>
 </body>
 

@@ -6,211 +6,413 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개노답 하렘 다크 판타지</title>
     <link rel="icon" type="image/png" href="img/웹로고.png">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@500;700&display=swap"
         rel="stylesheet">
+
+    <!-- CSS (Responsive Loading) -->
+    <link rel="stylesheet" href="style.css" media="(min-width: 769px)">
+    <link rel="stylesheet" href="mobile-style.css" media="(max-width: 768px)">
+
+    <!-- View Switcher Logic -->
+    <style>
+        #mobile-view {
+            display: none;
+        }
+
+        #desktop-view {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            #desktop-view {
+                display: none;
+            }
+
+            #mobile-view {
+                display: block;
+            }
+
+            body {
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="main-container">
-        <!-- Content Area -->
-        <div class="key-fig-content">
-            <!-- Top Title Image -->
-            <img class="page-title-img" src="img/주요인물.png" alt="Page Title" />
+    <!-- ==========================================
+         DESKTOP VIEW (≥ 769px)
+         ========================================== -->
+    <div id="desktop-view">
+        <div class="main-container">
+            <!-- Content Area -->
+            <div class="key-fig-content">
+                <!-- Top Title Image -->
+                <img class="page-title-img" src="img/주요인물.png" alt="Page Title" />
 
-            <!-- Key Figures Grid -->
-            <div class="key-fig-grid">
-                <!-- Card 1 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                <!-- Key Figures Grid -->
+                <div class="key-fig-grid">
+                    <!-- Cards 1-15 (Desktop) -->
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <!-- (Repeating Cards...) -->
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Row 2 -->
-                <!-- Card 7 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 9 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 10 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 11 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 12 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Row 3 (Partial) -->
-                <!-- Card 13 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 14 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Card 15 -->
-                <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
-                    <div class="key-fig-overlay">
-                        <div class="key-fig-name">이름</div>
-                        <div class="key-fig-tag">설명</div>
+                    <div class="key-fig-card" style="background-image: url('https://placehold.co/174x226')">
+                        <div class="key-fig-overlay">
+                            <div class="key-fig-name">이름</div>
+                            <div class="key-fig-tag">설명</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+            <!-- Header -->
+            <script src="header.js"></script>
+            <script>renderHeader('character');</script>
+
+            <!-- Reuse Popup Structure -->
+            <div class="popup-overlay" id="keyFigPopup">
+                <div class="popup-content">
+                    <img class="popup-main-img" src="https://placehold.co/404x590" alt="Detail" />
+                    <div class="popup-name">인물 이름</div>
+                    <div class="popup-info">소속 / 나이 / 특성</div>
+                    <div class="popup-desc">인물 설명 텍스트<br />인물 설명 텍스트<br />인물 설명 텍스트</div>
+
+                    <img class="popup-gallery-img g-1" src="https://placehold.co/210x143" />
+                    <img class="popup-gallery-img g-2" src="https://placehold.co/210x143" />
+                    <img class="popup-gallery-img g-3" src="https://placehold.co/210x143" />
+                </div>
+            </div>
+
+            <!-- Image Popup -->
+            <div class="image-popup-overlay" id="imagePopup">
+                <img class="large-view-img" src="" alt="Large View" id="largeViewImg" />
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Desktop Guard
+                    if (window.innerWidth <= 768) return;
+
+                    const keyFigPopup = document.getElementById('keyFigPopup');
+                    const imagePopup = document.getElementById('imagePopup');
+                    const largeViewImg = document.getElementById('largeViewImg');
+                    const cards = document.querySelectorAll('.key-fig-card');
+                    const popupName = keyFigPopup.querySelector('.popup-name');
+                    const popupMainImg = keyFigPopup.querySelector('.popup-main-img');
+                    const galleryImages = keyFigPopup.querySelectorAll('.popup-gallery-img');
+
+                    // Open detail popup
+                    cards.forEach(card => {
+                        card.addEventListener('click', () => {
+                            const name = card.querySelector('.key-fig-name').textContent;
+                            popupName.textContent = name;
+                            keyFigPopup.classList.add('active');
+                        });
+                    });
+
+                    // Close detail popup
+                    keyFigPopup.addEventListener('click', (e) => {
+                        if (e.target === keyFigPopup) {
+                            keyFigPopup.classList.remove('active');
+                        }
+                    });
+
+                    // Open image popup
+                    galleryImages.forEach(img => {
+                        img.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            largeViewImg.src = img.src;
+                            imagePopup.classList.add('active');
+                        });
+                    });
+
+                    // Close image popup
+                    imagePopup.addEventListener('click', (e) => {
+                        if (e.target === imagePopup || e.target === largeViewImg) {
+                            imagePopup.classList.remove('active');
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MOBILE VIEW (≤ 768px)
+         ========================================== -->
+    <div id="mobile-view">
         <!-- Header -->
-        <script src="header.js"></script>
-        <script>renderHeader('character');</script>
+        <header class="mobile-header">
+            <a href="index.html">
+                <img class="mobile-logo" src="img/로고.png" alt="Logo">
+            </a>
+            <div class="mobile-menu-icon" id="mobile-menu-btn">
+                <div class="menu-icon-inner">
+                    <div class="menu-bars"></div>
+                </div>
+            </div>
+        </header>
 
-        <!-- Reuse Popup Structure -->
-        <div class="popup-overlay" id="keyFigPopup">
-            <div class="popup-content">
-                <img class="popup-main-img" src="https://placehold.co/404x590" alt="Detail" />
-                <div class="popup-name">인물 이름</div>
-                <div class="popup-info">소속 / 나이 / 특성</div>
-                <div class="popup-desc">인물 설명 텍스트<br />인물 설명 텍스트<br />인물 설명 텍스트</div>
-
-                <img class="popup-gallery-img g-1" src="https://placehold.co/210x143" />
-                <img class="popup-gallery-img g-2" src="https://placehold.co/210x143" />
-                <img class="popup-gallery-img g-3" src="https://placehold.co/210x143" />
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="party.html" class="mobile-nav-item">파티원</a>
+                <a href="key figures.html" class="mobile-nav-item" style="color: #c5a059;">주요인물</a>
+                <a href="faction.html" class="mobile-nav-item">세력</a>
+                <a href="monster.html" class="mobile-nav-item">몬스터</a>
+                <img class="mobile-nav-play-btn" src="img/플레이.png" alt="Game Start"
+                    onclick="window.open('https://share.crack.wrtn.ai/v3snwy', '_blank')" />
             </div>
         </div>
 
-        <!-- Image Popup -->
-        <div class="image-popup-overlay" id="imagePopup">
-            <img class="large-view-img" src="" alt="Large View" id="largeViewImg" />
+        <!-- Content Wrapper -->
+        <div class="key-figures-wrapper">
+            <div class="key-figures-grid">
+                <!-- Cards 1-14 with Data Attributes -->
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 1째줄&#10;캐릭터 설명 2째줄&#10;캐릭터 설명 3째줄">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeating Placeholder Cards -->
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="figure-card" style="background-image: url('https://placehold.co/173x225')" data-name="이름"
+                    data-info="등급 / 정보" data-desc="캐릭터 설명 내용입니다.">
+                    <div class="figure-overlay">
+                        <div class="figure-name">이름</div>
+                        <div class="figure-tag-wrapper">
+                            <div class="figure-tag">설명</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const keyFigPopup = document.getElementById('keyFigPopup');
-                const imagePopup = document.getElementById('imagePopup');
-                const largeViewImg = document.getElementById('largeViewImg');
-                const cards = document.querySelectorAll('.key-fig-card');
-                const popupName = keyFigPopup.querySelector('.popup-name');
-                const popupMainImg = keyFigPopup.querySelector('.popup-main-img');
-                const galleryImages = keyFigPopup.querySelectorAll('.popup-gallery-img');
+        <!-- Mobile Popup Overlay -->
+        <div class="popup-overlay-mobile" id="mobile-popup">
+            <div class="popup-content-mobile">
+                <div class="popup-name-mobile">이름</div>
+                <div class="popup-info-mobile">정보</div>
+                <div class="popup-desc-mobile">설명</div>
 
-                // Open detail popup
-                cards.forEach(card => {
-                    card.addEventListener('click', () => {
-                        const name = card.querySelector('.key-fig-name').textContent;
-                        popupName.textContent = name;
-                        keyFigPopup.classList.add('active');
-                    });
-                });
+                <div class="popup-gallery-scroll">
+                    <img class="popup-gallery-img-mobile" src="https://placehold.co/210x143" alt="Gallery 1">
+                    <img class="popup-gallery-img-mobile" src="https://placehold.co/210x143" alt="Gallery 2">
+                    <img class="popup-gallery-img-mobile" src="https://placehold.co/210x143" alt="Gallery 3">
+                </div>
+            </div>
+        </div>
 
-                // Close detail popup
-                keyFigPopup.addEventListener('click', (e) => {
-                    if (e.target === keyFigPopup) {
-                        keyFigPopup.classList.remove('active');
-                    }
-                });
+        <!-- Mobile Image Popup Overlay (2nd Depth) -->
+        <div class="image-popup-overlay-mobile" id="mobile-image-popup">
+            <img class="mobile-large-view-img" id="mobile-large-img" src="" alt="Large View" />
+        </div>
 
-                // Open image popup
-                galleryImages.forEach(img => {
-                    img.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        largeViewImg.src = img.src;
-                        imagePopup.classList.add('active');
-                    });
-                });
-
-                // Close image popup
-                imagePopup.addEventListener('click', (e) => {
-                    if (e.target === imagePopup || e.target === largeViewImg) {
-                        imagePopup.classList.remove('active');
-                    }
-                });
-            });
-        </script>
+        <!-- Script -->
+        <script src="mobile-script.js"></script>
     </div>
 </body>
 

@@ -8,7 +8,8 @@ body {
 .main-container {
     width: 100%;
     max-width: 1920px;
-    min-height: 100vh;
+    min-height: 1080px;
+    /* Ensure 127px bottom margin (137+816+127) */
     position: relative;
     background: white;
     overflow-x: hidden;
@@ -26,6 +27,8 @@ body {
     background: #010101;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    /* Ensure header is on top */
 }
 
 .logo {
@@ -96,26 +99,27 @@ body {
 }
 
 .bg-image {
-    width: 100%;
-    max-width: 1920px;
-    height: 991px;
-    left: 0px;
-    top: 89px;
-    position: absolute;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    position: fixed;
     object-fit: cover;
+    z-index: 0;
 }
 
 .backdrop {
-    width: 100%;
-    max-width: 1920px;
-    height: 991px;
-    left: 0px;
-    top: 89px;
-    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    position: fixed;
     background: rgba(0, 0, 0, 0.60);
     overflow: hidden;
     backdrop-filter: blur(28.60px);
+    z-index: 1;
+    pointer-events: none;
+    /* Allow clicks to pass through */
 }
 
 .icon-wrapper {
@@ -124,6 +128,9 @@ body {
     position: absolute;
     overflow: hidden;
     cursor: pointer;
+    pointer-events: auto;
+    /* Re-enable clicks */
+    z-index: 2;
 }
 
 .icon-wrapper.pos-1 {
@@ -192,6 +199,8 @@ body {
     overflow: hidden;
     background-image: url('bg_card.png');
     background-size: cover;
+    z-index: 10;
+    /* Ensure content is above backdrop */
 }
 
 .card-footer {
@@ -798,603 +807,143 @@ body {
     }
 
     .nav-item.job {
-        left: auto;
-        right: 280px;
+        left: 200px;
     }
 
     .nav-item.character {
-        left: auto;
-        right: 190px;
+        left: 300px;
     }
 
     .nav-item.faction {
-        left: auto;
-        right: 120px;
+        left: 450px;
     }
 
     .nav-item.monster {
-        left: auto;
-        right: 30px;
-    }
-
-    .play-btn-img {
-        left: auto;
-        right: 20px;
-        top: 18px;
-    }
-
-    .bg-image,
-    .backdrop {
-        width: 100%;
-        height: calc(100vh - 70px);
-        top: 70px;
-    }
-
-    .content-card {
-        width: 90%;
-        max-width: 900px;
-        height: auto;
-        min-height: 500px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 100px;
-    }
-
-    .card-footer {
-        width: 100%;
-        height: auto;
-        min-height: 150px;
-        top: auto;
-        bottom: 0;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .party-content,
-    .faction-content,
-    .monster-content,
-    .key-fig-content {
-        width: 100%;
-        height: auto;
-        min-height: calc(100vh - 70px);
-        top: 70px;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .page-title-img {
-        width: 80%;
-        max-width: 500px;
-        height: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 10px;
-    }
-
-    /* Party page cards */
-    .char-card {
-        width: 45%;
-        min-width: 250px;
-        margin: 0 auto 30px;
-    }
-
-    .char-card.pos-1,
-    .char-card.pos-2,
-    .char-card.pos-3,
-    .char-card.pos-4 {
-        position: relative;
-        left: 0;
-        display: inline-block;
-        margin: 10px 2%;
-    }
-
-    /* Faction cards */
-    .faction-card {
-        width: 90%;
-        max-width: 550px;
-        position: relative;
-        left: 50% !important;
-        transform: translateX(-50%);
-        margin-bottom: 20px;
-    }
-
-    .faction-card.pos-1 {
-        top: 100px;
-    }
-
-    .faction-card.pos-2 {
-        top: 0;
-    }
-
-    .faction-card.pos-3 {
-        top: 0;
-    }
-
-    /* Monster grid */
-    .monster-grid {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 120px;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        width: 95%;
-        max-width: 900px;
-        gap: 20px;
-    }
-
-    /* Key figures grid */
-    .key-fig-grid {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 120px;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        width: 95%;
-        max-width: 900px;
-        gap: 20px;
-    }
-
-    /* Popup adjustments */
-    .popup-overlay {
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
-
-    .popup-content {
-        width: 90%;
-        max-width: 800px;
-        height: auto;
-        max-height: 90vh;
-        overflow-y: auto;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .popup-main-img {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 20px;
-        position: relative;
-    }
-
-    .popup-name,
-    .popup-info,
-    .popup-desc {
-        position: relative;
-        left: 0;
-        top: 0;
-        margin: 15px 0;
-        text-align: center;
-    }
-
-    .popup-gallery-img {
-        width: 30%;
-        height: auto;
-        position: relative;
-        top: 0;
-        left: 0 !important;
-        display: inline-block;
-        margin: 1.5%;
-    }
-
-    .popup-icon {
-        position: relative;
-        left: 0 !important;
-        top: 0;
-        display: inline-block;
-        margin: 5px;
-    }
-
-    .image-popup-overlay {
-        width: 100%;
-        height: 100%;
-        top: 0;
-    }
-
-    .large-view-img {
-        width: 90%;
-        max-width: 800px;
-        height: auto;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
-/* Mobile devices (768px and below) */
-@media screen and (max-width: 768px) {
-    .header {
-        height: 60px;
-        padding: 0 10px;
-    }
-
-    .logo {
-        width: 80px;
-        height: 60px;
-        left: 10px;
-    }
-
-    .nav-item {
-        font-size: 12px;
-        top: 22px;
-    }
-
-    .nav-item.job {
-        right: 180px;
-    }
-
-    .nav-item.character {
-        right: 115px;
-    }
-
-    .nav-item.faction {
-        right: 65px;
-    }
-
-    .nav-item.monster {
-        right: 10px;
+        left: 550px;
     }
 
     .play-btn-img {
         display: none;
     }
 
-    .nav-active-marker {
-        width: 40px;
-        height: 20px;
-        top: 22px;
-    }
-
-    .marker-job {
-        left: auto;
-        right: 180px;
-    }
-
-    .marker-character {
-        left: auto;
-        right: 115px;
-        width: 60px;
-    }
-
-    .marker-faction {
-        left: auto;
-        right: 65px;
-        width: 30px;
-    }
-
-    .marker-monster {
-        left: auto;
-        right: 10px;
-    }
-
-    .bg-image,
-    .backdrop {
-        height: calc(100vh - 60px);
-        top: 60px;
-    }
-
     .content-card {
-        width: 95%;
-        top: 80px;
-        min-height: 400px;
-    }
-
-    .card-title {
-        font-size: 18px;
-        left: 20px;
-        top: 20px;
-    }
-
-    .card-desc {
-        font-size: 14px;
-        left: 20px;
-        top: 55px;
-        line-height: 20px;
+        width: 90%;
+        max-width: 800px;
+        height: auto;
+        min-height: 500px;
+        left: 5%;
+        top: 100px;
     }
 
     .card-footer {
-        min-height: 120px;
-        padding: 15px;
-    }
-
-    .icon-wrapper {
-        width: 40px;
-        height: 40px;
-    }
-
-    .icon-wrapper.pos-1 {
-        right: 10px;
-        left: auto;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .icon-wrapper.pos-2 {
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%) rotate(180deg);
-    }
-
-    .icon-circle {
-        width: 40px;
-        height: 40px;
-    }
-
-    .party-content,
-    .faction-content,
-    .monster-content,
-    .key-fig-content {
-        top: 60px;
-        min-height: calc(100vh - 60px);
-        padding: 10px;
-    }
-
-    .page-title-img {
-        width: 90%;
-        max-width: 300px;
-        margin-bottom: 20px;
-    }
-
-    /* Party cards - stack vertically */
-    .char-card {
         width: 100%;
-        max-width: 300px;
-        position: relative !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        top: auto !important;
-        margin: 15px auto;
-        display: block;
-    }
-
-    .char-card.pos-1,
-    .char-card.pos-2,
-    .char-card.pos-3,
-    .char-card.pos-4 {
-        position: relative !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-    }
-
-    .char-img {
-        width: 100%;
-        max-width: 233px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /* Faction cards */
-    .faction-card {
-        width: 100%;
-        max-width: 350px;
         height: auto;
-        min-height: 160px;
-        padding: 15px;
+        top: auto;
+        bottom: 0;
+        padding: 20px;
         box-sizing: border-box;
     }
 
-    .faction-card.pos-1 {
-        top: 80px;
+    .char-card {
+        width: 45%;
+        margin: 10px;
+        left: auto !important;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
     }
 
-    .faction-img {
-        width: 80px;
-        height: 80px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 10px;
-    }
-
-    .faction-name {
-        left: 0;
-        top: 100px;
-        width: 100%;
+    .party-content {
         text-align: center;
-        font-size: 18px;
-    }
-
-    .faction-desc {
-        width: 100%;
-        left: 0;
-        top: 135px;
-        text-align: center;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-
-    /* Monster grid */
-    .monster-grid {
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
-        gap: 15px;
-        top: 100px;
-    }
-
-    .monster-card {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 174 / 226;
-    }
-
-    .monster-card-overlay {
-        width: 100%;
-    }
-
-    .monster-name {
-        font-size: 14px;
-    }
-
-    /* Key figures grid */
-    .key-fig-grid {
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
-        gap: 15px;
-        top: 100px;
-    }
-
-    .key-fig-card {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 174 / 226;
-    }
-
-    .key-fig-overlay {
-        width: 100%;
-    }
-
-    .key-fig-name {
-        font-size: 14px;
-    }
-
-    .key-fig-tag {
-        font-size: 10px;
-        left: auto;
-        right: 5px;
-        padding: 2px 4px;
-    }
-
-    /* Popup adjustments */
-    .popup-content {
-        width: 95%;
-        max-height: 85vh;
-        padding: 15px;
-    }
-
-    .popup-name {
-        font-size: 32px;
-        margin: 10px 0;
-    }
-
-    .popup-info {
-        font-size: 18px;
-        margin: 10px 0;
-    }
-
-    .popup-desc {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    .popup-gallery-img {
-        width: 48%;
-        margin: 1%;
-    }
-
-    .popup-gallery-img.g-3 {
-        width: 98%;
-        margin: 1%;
-    }
-
-    .popup-icon {
-        width: 40px;
-        height: 40px;
-        margin: 3px;
-    }
-
-    .large-view-img {
-        width: 95%;
-        max-width: 95vw;
-    }
-}
-
-/* Small mobile devices (480px and below) */
-@media screen and (max-width: 480px) {
-    .header {
-        height: 50px;
-    }
-
-    .logo {
-        width: 60px;
-        height: 50px;
-    }
-
-    .nav-item {
-        font-size: 10px;
-        top: 18px;
-    }
-
-    .nav-item.job {
-        right: 140px;
-    }
-
-    .nav-item.character {
-        right: 85px;
-    }
-
-    .nav-item.faction {
-        right: 45px;
-    }
-
-    .nav-item.monster {
-        right: 5px;
-    }
-
-    .bg-image,
-    .backdrop,
-    .party-content,
-    .faction-content,
-    .monster-content,
-    .key-fig-content {
-        top: 50px;
-        min-height: calc(100vh - 50px);
+        padding-top: 100px;
     }
 
     .page-title-img {
-        width: 95%;
-        max-width: 250px;
-    }
-
-    .content-card {
-        top: 60px;
-    }
-
-    .card-title {
-        font-size: 16px;
-    }
-
-    .card-desc {
-        font-size: 12px;
-    }
-
-    .char-card {
-        max-width: 280px;
-    }
-
-    .faction-card {
-        height: auto;
-        min-height: 200px;
-    }
-
-    .faction-card.pos-1 {
-        top: 70px;
+        width: 50%;
+        left: 25%;
+        top: 20px;
     }
 
     .monster-grid,
     .key-fig-grid {
+        position: relative;
+        left: 0;
+        top: 150px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .faction-card {
+        left: 5% !important;
+        width: 90%;
+        top: auto !important;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .faction-card:first-child {
+        margin-top: 150px;
+    }
+}
+
+/* Mobile (768px and below) */
+@media screen and (max-width: 768px) {
+    .header {
+        height: 60px;
+    }
+
+    .logo {
+        height: 60px;
+        width: 100px;
+    }
+
+    .nav-item {
+        display: none;
+        /* Hide nav for very small screens, rely on hamburger potentially */
+    }
+
+    .content-card {
+        width: 95%;
+        left: 2.5%;
         top: 80px;
-        gap: 10px;
+    }
+
+    .char-card {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .popup-content {
+        width: 95%;
+        height: 90%;
+        left: 2.5%;
+        top: 5%;
+    }
+
+    .popup-main-img {
+        display: none;
     }
 
     .popup-name {
-        font-size: 24px;
+        left: 20px;
+        font-size: 32px;
     }
 
     .popup-info {
-        font-size: 16px;
+        left: 20px;
     }
 
     .popup-desc {
-        font-size: 13px;
+        left: 20px;
+        width: 90%;
     }
 
-    .popup-icon {
-        width: 36px;
-        height: 36px;
+    .popup-gallery-img {
+        display: none;
     }
 }

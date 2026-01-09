@@ -6,109 +6,282 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개노답 하렘 다크 판타지</title>
     <link rel="icon" type="image/png" href="img/웹로고.png">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts (Common) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@500;700&display=swap"
         rel="stylesheet">
+
+    <!-- CSS (Responsive Loading) -->
+    <!-- Desktop Styles (769px and up) -->
+    <link rel="stylesheet" href="style.css" media="(min-width: 769px)">
+    <!-- Mobile Styles (768px and down) -->
+    <link rel="stylesheet" href="mobile-style.css" media="(max-width: 768px)">
+
+    <!-- View Switcher Logic -->
+    <style>
+        /* Default: Show Desktop, Hide Mobile */
+        #mobile-view {
+            display: none;
+        }
+
+        #desktop-view {
+            display: block;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Mobile Breakpoint */
+        @media (max-width: 768px) {
+            #desktop-view {
+                display: none;
+            }
+
+            #mobile-view {
+                display: block;
+            }
+
+            /* Reset body for mobile */
+            body {
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="main-container">
-        <!-- Header -->
-        <script src="header.js"></script>
-        <script>renderHeader('');</script>
+    <!-- ==========================================
+         DESKTOP VIEW (≥ 769px)
+         ========================================== -->
+    <div id="desktop-view">
+        <div class="main-container">
+            <!-- Header -->
+            <script src="header.js"></script>
+            <script>renderHeader('');</script>
 
-        <!-- Background Image -->
-        <img class="bg-image" src="img/아르케논.png" alt="Background" />
+            <!-- Background Image -->
+            <img class="bg-image" src="img/아르케논.png" alt="Background" />
 
-        <!-- Navigation Arrows -->
-        <div class="backdrop">
-            <div class="icon-wrapper pos-1">
-                <div class="icon-circle">
-                    <img src="img/right.png" alt="오른쪽 화살표" />
+            <!-- Navigation Arrows -->
+            <div class="backdrop">
+                <div class="icon-wrapper pos-1">
+                    <div class="icon-circle">
+                        <img src="img/right.png" alt="오른쪽 화살표" />
+                    </div>
+                </div>
+                <div class="icon-wrapper pos-2">
+                    <div class="icon-circle">
+                        <img src="img/right.png" alt="왼쪽 화살표" />
+                    </div>
                 </div>
             </div>
-            <div class="icon-wrapper pos-2">
-                <div class="icon-circle">
-                    <img src="img/right.png" alt="왼쪽 화살표" />
+            <!-- Content Card -->
+            <div class="content-card">
+                <img class="card-image" src="img/아르케논.png" alt="Card Image" />
+                <div class="card-footer">
+                    <div class="card-title">로딩 중...</div>
+                    <div class="card-desc">슬라이드를 불러오는 중입니다...</div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Content Card -->
-    <div class="content-card">
-        <img class="card-image" src="img/아르케논.png" alt="Card Image" />
-        <div class="card-footer">
-            <div class="card-title">로딩 중...</div>
-            <div class="card-desc">슬라이드를 불러오는 중입니다...</div>
-        </div>
-    </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                let initialized = false;
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const bgImage = document.querySelector('.bg-image');
-            const cardImage = document.querySelector('.card-image');
-            const cardTitle = document.querySelector('.card-title');
-            const cardDesc = document.querySelector('.card-desc');
-            const rightBtn = document.querySelector('.icon-wrapper.pos-1');
-            const leftBtn = document.querySelector('.icon-wrapper.pos-2');
+                function initDesktop() {
+                    // Mobile guard
+                    if (window.innerWidth <= 768) return;
+                    // Run only once
+                    if (initialized) return;
 
-            // Define 4 slide data
-            const slides = [
-                {
-                    bgImage: 'img/아르케논.png',
-                    cardImage: 'img/아르케논.png',
-                    title: '\'위대한\' 왕국 아르케논',
-                    description: '세계의 유일한 대륙인 판게아를 통일한 아르케논에 오신 걸 환영합니다.<br/>치열한 권력 다툼 끝에 즉위한 국왕에게 새로운 걱정거리가 생겼군요.<br/>바로, 마왕 부활의 임박입니다.'
-                },
-                {
-                    bgImage: 'img/체스게임.png',
-                    cardImage: 'img/체스게임.png',
-                    title: 'Just a chess game',
-                    description: '자애롭고 온화한, 어머니 같은 신? 실수 투성이에다 어리버리한, 인간미 넘치는 신?<br />차라리 그런 클리셰적 스토리였다면 운명이 이토록 잔혹하지 않았을 겁니다.<br />모든 선악 전쟁은 신과 마신의 체스 게임일 뿐입니다. 그리고 체스말들의 목숨은 체크메이트를 위한 불가피한 희생일 뿐이죠.'
-                },
-                {
-                    bgImage: 'img/체크메이트.png',
-                    cardImage: 'img/체크메이트.png',
-                    title: '체크메이트!',
-                    description: '마왕은 이미 한번 체크메이트를 당한 전적이 있습니다. 나이트로 허를 찌르는 고전적인 전략이었죠.<br />이 일로 인해 가여운 마왕은 제대로 된 유언도 남기지 못한 채 무려 천 년 동안 잠들고 말았습니다.'
-                },
-                {
-                    bgImage: 'img/나이트 밴.png',
-                    cardImage: 'img/나이트 밴.png',
-                    title: '나이트 \'밴\'',
-                    description: '감히 비겁하게 순수 실력으로 압도하다뇨? 마신은 참을 수 없었습니다! 신의 최애 기물인 나이트를 금지 시켜 버렸죠.<br />그 결과 천 년 후에 마왕을 토벌할 파티원은 대륙에서 가장 약하고 어리석은 5인이 되었습니다.<br />그 덕분에 당신 같은 얼간이가 무려 마왕 토벌을 위한 파티의 파티장까지 될 수 있었죠.'
+                    const bgImage = document.querySelector('#desktop-view .bg-image');
+                    const cardImage = document.querySelector('#desktop-view .card-image');
+                    const cardTitle = document.querySelector('#desktop-view .card-title');
+                    const cardDesc = document.querySelector('#desktop-view .card-desc');
+                    const rightBtn = document.querySelector('#desktop-view .icon-wrapper.pos-1');
+                    const leftBtn = document.querySelector('#desktop-view .icon-wrapper.pos-2');
+
+                    if (!bgImage || !cardImage || !rightBtn || !leftBtn) return;
+
+                    const slides = [
+                        {
+                            bgImage: 'img/아르케논.png',
+                            cardImage: 'img/아르케논.png',
+                            title: '\'위대한\' 왕국 아르케논',
+                            description: '세계의 유일한 대륙인 판게아를 통일한 아르케논에 오신 걸 환영합니다.<br/>치열한 권력 다툼 끝에 즉위한 국왕에게 새로운 걱정거리가 생겼군요.<br/>바로, 마왕 부활의 임박입니다.'
+                        },
+                        {
+                            bgImage: 'img/체스게임.png',
+                            cardImage: 'img/체스게임.png',
+                            title: 'Just a chess game',
+                            description: '자애롭고 온화한, 어머니 같은 신? 실수 투성이에다 어리버리한, 인간미 넘치는 신?<br />차라리 그런 클리셰적 스토리였다면 운명이 이토록 잔혹하지 않았을 겁니다.<br />모든 선악 전쟁은 신과 마신의 체스 게임일 뿐입니다. 그리고 체스말들의 목숨은 체크메이트를 위한 불가피한 희생일 뿐이죠.'
+                        },
+                        {
+                            bgImage: 'img/체크메이트.png',
+                            cardImage: 'img/체크메이트.png',
+                            title: '체크메이트!',
+                            description: '마왕은 이미 한번 체크메이트를 당한 전적이 있습니다. 나이트로 허를 찌르는 고전적인 전략이었죠.<br />이 일로 인해 가여운 마왕은 제대로 된 유언도 남기지 못한 채 무려 천 년 동안 잠들고 말았습니다.'
+                        },
+                        {
+                            bgImage: 'img/나이트 밴.png',
+                            cardImage: 'img/나이트 밴.png',
+                            title: '나이트 \'밴\'',
+                            description: '감히 비겁하게 순수 실력으로 압도하다뇨? 마신은 참을 수 없었습니다! 신의 최애 기물인 나이트를 금지 시켜 버렸죠.<br />그 결과 천 년 후에 마왕을 토벌할 파티원은 대륙에서 가장 약하고 어리석은 5인이 되었습니다.<br />그 덕분에 당신 같은 얼간이가 무려 마왕 토벌을 위한 파티의 파티장까지 될 수 있었죠.'
+                        }
+                    ];
+
+                    let currentSlide = 0;
+
+                    function updateSlide(index) {
+                        const slide = slides[index];
+                        bgImage.src = slide.bgImage;
+                        cardImage.src = slide.cardImage;
+                        cardTitle.textContent = slide.title;
+                        cardDesc.innerHTML = slide.description;
+                    }
+
+                    rightBtn.addEventListener('click', () => {
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        updateSlide(currentSlide);
+                    });
+
+                    leftBtn.addEventListener('click', () => {
+                        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                        updateSlide(currentSlide);
+                    });
+
+                    updateSlide(currentSlide);
+                    initialized = true;
                 }
-            ];
 
-            let currentSlide = 0;
-
-            // Function to update slide
-            function updateSlide(index) {
-                const slide = slides[index];
-                bgImage.src = slide.bgImage;
-                cardImage.src = slide.cardImage;
-                cardTitle.textContent = slide.title;
-                cardDesc.innerHTML = slide.description;
-            }
-
-            // Right button - next slide
-            rightBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                updateSlide(currentSlide);
+                initDesktop();
+                // Re-check on resize (in case started small and grew large)
+                window.addEventListener('resize', initDesktop);
             });
+        </script>
+    </div>
 
-            // Left button - previous slide
-            leftBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                updateSlide(currentSlide);
-            });
+    <!-- ==========================================
+         MOBILE VIEW (≤ 768px)
+         ========================================== -->
+    <div id="mobile-view">
+        <!-- Header -->
+        <header class="mobile-header">
+            <img class="mobile-logo" src="img/로고.png" alt="Logo">
+            <div class="mobile-menu-icon" id="mobile-menu-btn">
+                <div class="menu-icon-inner">
+                    <div class="menu-bars"></div>
+                </div>
+            </div>
+        </header>
 
-            // Initialize with first slide
-            updateSlide(currentSlide);
-        });
-    </script>
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="party.html" class="mobile-nav-item">파티원</a>
+                <a href="key figures.html" class="mobile-nav-item">주요인물</a>
+                <a href="faction.html" class="mobile-nav-item">세력</a>
+                <a href="monster.html" class="mobile-nav-item">몬스터</a>
+                <img class="mobile-nav-play-btn" src="img/플레이.png" alt="Game Start"
+                    onclick="window.open('https://share.crack.wrtn.ai/v3snwy', '_blank')" />
+            </div>
+        </div>
+
+        <!-- Slides Container -->
+        <div class="slides-container">
+            <!-- Slide 1 -->
+            <section class="slide" data-slide="1">
+                <div class="slide-bg">
+                    <img class="bg-image" src="img mobile/아르케논 모바일.png" alt="Background" />
+                </div>
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="slide-footer">
+                            <h1 class="slide-title">'위대한' 왕국 아르케논</h1>
+                            <div class="slide-desc">
+                                세계의 유일한 대륙인 판게아를 통일한 아르케논에 오신 걸 환영합니다.<br />치열한 권력 다툼 끝에 즉위한 국왕에게 새로운 걱정거리가
+                                생겼군요.<br />바로,
+                                마왕 부활의 임박입니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="slide" data-slide="2">
+                <div class="slide-bg">
+                    <img class="bg-image" src="img mobile/체스게임 모바일.png" alt="Background" />
+                </div>
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="slide-footer">
+                            <h1 class="slide-title">Just a chess game</h1>
+                            <div class="slide-desc">
+                                자애롭고 온화한, 어머니 같은 신? 실수 투성이에다 어리버리한, 인간미 넘치는 신?<br />차라리 그런 클리셰적 스토리였다면 운명이 이토록 잔혹하지 않았을
+                                겁니다.<br />모든 선악 전쟁은 신과 마신의 체스 게임일 뿐입니다. 그리고 체스말들의 목숨은 체크메이트를 위한 불가피한 희생일 뿐이죠.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="slide" data-slide="3">
+                <div class="slide-bg">
+                    <img class="bg-image" src="img mobile/체크메이트 모바일.png" alt="Background" />
+                </div>
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="slide-footer">
+                            <h1 class="slide-title">체크메이트!</h1>
+                            <div class="slide-desc">
+                                마왕은 이미 한번 체크메이트를 당한 전적이 있습니다. 나이트로 허를 찌르는 고전적인 전략이었죠.<br />이 일로 인해 가여운 마왕은 제대로 된 유언도 남기지
+                                못한
+                                채 무려 천 년 동안 잠들고 말았습니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="slide" data-slide="4">
+                <div class="slide-bg">
+                    <img class="bg-image" src="img mobile/나이트 밴 모바일.png" alt="Background" />
+                </div>
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <div class="slide-footer">
+                            <h1 class="slide-title">나이트 '밴'</h1>
+                            <div class="slide-desc">
+                                감히 비겁하게 순수 실력으로 압도하다뇨? 마신은 참을 수 없었습니다! 신의 최애 기물인 나이트를 금지 시켜 버렸죠.<br />그 결과 천 년 후에 마왕을
+                                토벌할
+                                파티원은 대륙에서 가장 약하고 어리석은 5인이 되었습니다.<br />그 덕분에 당신 같은 얼간이가 무려 마왕 토벌을 위한 파티의 파티장까지 될 수 있었죠.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="slide-indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+            <span class="indicator" data-index="3"></span>
+        </div>
+
+        <script src="mobile-script.js"></script>
+    </div>
 </body>
 
 </html>
