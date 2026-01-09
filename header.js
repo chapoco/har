@@ -10,7 +10,7 @@ function renderHeader(activePage) {
 
     const headerHTML = `
     <div class="header">
-        <img class="logo" src="img/로고.png" alt="Logo" onclick="window.location.href='main.html'" />
+        <img class="logo" src="img/로고.png" alt="Logo" onclick="window.location.href='index.html'" />
         
         ${setMarker}
         
