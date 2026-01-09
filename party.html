@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <title>개노답 하렘 다크 판타지</title>
+    <link rel="icon" type="image/png" href="img/웹로고.png">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Content Area -->
+        <div class="party-content">
+            <!-- Top Title Image -->
+            <img class="page-title-img" src="img/파티원.png" alt="Page Title" />
+
+            <!-- Character Cards -->
+            <div class="char-card pos-1">
+                <img class="char-img" src="img/브라카.png" alt="Character" />
+                <div class="char-tag-wrapper">
+                    <div class="char-tag">팔씨름 챔피언 / 24세 / ESTP</div>
+                </div>
+                <div class="char-name">브라카</div>
+                <div class="char-desc">든든하고 호탕한 돌머리 전사입니다. 단순한 임무도, 복잡한 임무도 문제 없죠. 전부 통째로 박살내 버리면 그만이니까요.</div>
+                <div class="char-quote-box">
+                    <div class="char-quote"><i>"뭐, 싸우자고? 지금 플러팅하는 거냐?"</i></div>
+                </div>
+            </div>
+
+            <div class="char-card pos-2">
+                <img class="char-img" src="img/미유.png" alt="Character" />
+                <div class="char-tag-wrapper">
+                    <div class="char-tag">벨루즈의 골칫덩이 / 20세 / ESFP</div>
+                </div>
+                <div class="char-name">미유</div>
+                <div class="char-desc">벨루즈 가문에서 버림받은 비운의 영애입니다. 뭐, 사실 어느 집안에서 태어났더라도 내다 버리고 싶은 성질머리입니다.</div>
+                <div class="char-quote-box">
+                    <div class="char-quote">“이 그지 같은 새끼는 또 뭐야? 나한테 동냥이라도 하러 온 거야?”</div>
+                </div>
+            </div>
+
+            <div class="char-card pos-3">
+                <img class="char-img" src="img/에르벨.png" alt="Character" />
+                <div class="char-tag-wrapper">
+                    <div class="char-tag">잡지식계의 대현자 / 22세 / INTP</div>
+                </div>
+                <div class="char-name">에르벨</div>
+                <div class="char-desc">세계 최강의 두뇌를 가진 학자입니다. 그 분야가 '아르케논의 천 가지 알쓸신잡' 같은 종류긴 하지만 말이죠.</div>
+                <div class="char-quote-box">
+                    <div class="char-quote">“여기선 최소한의 각도로 몸을 틀어 회피하는 게 효율적... 어라?”</div>
+                </div>
+            </div>
+
+            <div class="char-card pos-4">
+                <img class="char-img" src="img/이르마.png" alt="Character" />
+                <div class="char-tag-wrapper">
+                    <div class="char-tag">마왕 다음 가는 음침함 / 26세 / ISFJ</div>
+                </div>
+                <div class="char-name">이르마</div>
+                <div class="char-desc">음침하고 소심한 겁쟁이지만 상당한 잠재 마력을 지녔습니다. 그 마력의 저장소가 어디인지는 대충 알 것 같군요.</div>
+                <div class="char-quote-box">
+                    <div class="char-quote">“ㅁ, 마, 마마마마 마왕을요? 제, 제가요...?!”</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <!-- Header -->
+        <script src="header.js"></script>
+        <script>renderHeader('job');</script>
+
+        <!-- Popup Overlay (Hidden by default) -->
+        <div class="popup-overlay" id="partyPopup">
+            <div class="popup-content">
+                <img class="popup-main-img" src="https://placehold.co/404x590" alt="Detail" />
+                <div class="popup-name">이름</div>
+                <div class="popup-info">직업 / 나이 / 성향</div>
+                <div class="popup-desc">캐릭터 설명 1째줄<br />캐릭터 설명 2째줄<br />캐릭터 설명 3째줄<br />캐릭터 설명 4째줄</div>
+
+                <img class="popup-gallery-img g-1" src="https://placehold.co/210x143" />
+                <img class="popup-gallery-img g-2" src="https://placehold.co/210x143" />
+                <img class="popup-gallery-img g-3" src="https://placehold.co/210x143" />
+
+                <img class="popup-icon i-1" src="https://placehold.co/48x48" />
+                <img class="popup-icon i-2" src="https://placehold.co/48x48" />
+                <img class="popup-icon i-3" src="https://placehold.co/48x48" />
+                <img class="popup-icon i-4" src="https://placehold.co/48x48" />
+                <img class="popup-icon i-5" src="https://placehold.co/48x48" />
+                <img class="popup-icon i-6" src="https://placehold.co/48x48" />
+                <img class="popup-icon i-7" src="https://placehold.co/48x48" />
+                <img class="popup-icon i-8" src="https://placehold.co/48x48" />
+            </div>
+        </div>
+
+        <!-- Second Popup (Image View) -->
+        <div class="image-popup-overlay" id="imagePopup">
+            <img class="large-view-img" src="" alt="Large View" id="largeViewImg" />
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const partyPopup = document.getElementById('partyPopup');
+                const imagePopup = document.getElementById('imagePopup');
+                const largeViewImg = document.getElementById('largeViewImg');
+                const cards = document.querySelectorAll('.char-card');
+                const galleryImages = document.querySelectorAll('.popup-gallery-img');
+
+                // Popup Elements to Update
+                const popupMainImg = partyPopup.querySelector('.popup-main-img');
+                const popupName = partyPopup.querySelector('.popup-name');
+                const popupInfo = partyPopup.querySelector('.popup-info');
+                const popupDesc = partyPopup.querySelector('.popup-desc');
+
+                // 1. Open Party Popup with Dynamic Content
+                cards.forEach(card => {
+                    card.addEventListener('click', () => {
+                        const name = card.querySelector('.char-name').textContent;
+                        const info = card.querySelector('.char-tag').textContent;
+                        // const desc = card.querySelector('.char-desc').innerHTML; // Use innerHTML to keep line breaks
+                        const img = card.querySelector('.char-img').src;
+
+                        // Update Popup Content
+                        popupName.textContent = name;
+                        popupInfo.textContent = info;
+                        // popupDesc.innerHTML = desc; // Optionally sync description
+                        popupMainImg.src = img; // Use the card image or a higher-res version if available in a data attribute
+
+                        // For now we assume the current description in the HTML is just a placeholder or general.
+                        // If specific descriptions are needed per character, we should add hidden data-desc attributes to cards.
+
+                        partyPopup.classList.add('active');
+                    });
+                });
+
+                // 2. Open Image Popup
+                galleryImages.forEach(img => {
+                    img.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Don't close parent popup
+                        // Use the clicked image source or a higher res version if available
+                        largeViewImg.src = img.src; // Just use the thumbnail src for now, or change to a high-res version
+                        // If you want a specific large image, you might need data attributes on the gallery images or logic mapping.
+                        // For this request, consolidating functionality is key.
+                        imagePopup.classList.add('active');
+                    });
+                });
+
+                // 3. Close Image Popup
+                imagePopup.addEventListener('click', (e) => {
+                    if (e.target === imagePopup || e.target === largeViewImg) {
+                        imagePopup.classList.remove('active');
+                    }
+                });
+
+                // 4. Close Party Popup
+                partyPopup.addEventListener('click', (e) => {
+                    if (e.target === partyPopup) {
+                        partyPopup.classList.remove('active');
+                    }
+                });
+
+                // 5. Icon Button Functionality - Change Main and Gallery Images
+                const iconButtons = partyPopup.querySelectorAll('.popup-icon');
+                const popupGalleryImgs = partyPopup.querySelectorAll('.popup-gallery-img');
+
+                // Define image sets for each icon button (8 sets)
+                const iconImageSets = {
+                    1: {
+                        main: 'https://placehold.co/404x590?text=Icon+1+Main',
+                        gallery: [
+                            'https://placehold.co/210x143?text=Icon+1+G1',
+                            'https://placehold.co/210x143?text=Icon+1+G2',
+                            'https://placehold.co/210x143?text=Icon+1+G3'
+                        ]
+                    },
+                    2: {
+                        main: 'https://placehold.co/404x590?text=Icon+2+Main',
+                        gallery: [
+                            'https://placehold.co/210x143?text=Icon+2+G1',
+                            'https://placehold.co/210x143?text=Icon+2+G2',
+                            'https://placehold.co/210x143?text=Icon+2+G3'
+                        ]
+                    },
+                    3: {
+                        main: 'https://placehold.co/404x590?text=Icon+3+Main',
+                        gallery: [
+                            'https://placehold.co/210x143?text=Icon+3+G1',
+                            'https://placehold.co/210x143?text=Icon+3+G2',
+                            'https://placehold.co/210x143?text=Icon+3+G3'
+                        ]
+                    },
+                    4: {
+                        main: 'https://placehold.co/404x590?text=Icon+4+Main',
+                        gallery: [
+                            'https://placehold.co/210x143?text=Icon+4+G1',
+                            'https://placehold.co/210x143?text=Icon+4+G2',
+                            'https://placehold.co/210x143?text=Icon+4+G3'
+                        ]
+                    },
+                    5: {
+                        main: 'https://placehold.co/404x590?text=Icon+5+Main',
+                        gallery: [
+                            'https://placehold.co/210x143?text=Icon+5+G1',
+                            'https://placehold.co/210x143?text=Icon+5+G2',
+                            'https://placehold.co/210x143?text=Icon+5+G3'
+                        ]
+                    },
+                    6: {
+                        main: 'https://placehold.co/404x590?text=Icon+6+Main',
+                        gallery: [
+                            'https://placehold.co/210x143?text=Icon+6+G1',
+                            'https://placehold.co/210x143?text=Icon+6+G2',
+                            'https://placehold.co/210x143?text=Icon+6+G3'
+                        ]
+                    },
+                    7: {
+                        main: 'https://placehold.co/404x590?text=Icon+7+Main',
+                        gallery: [
+                            'https://placehold.co/210x143?text=Icon+7+G1',
+                            'https://placehold.co/210x143?text=Icon+7+G2',
+                            'https://placehold.co/210x143?text=Icon+7+G3'
+                        ]
+                    },
+                    8: {
+                        main: 'https://placehold.co/404x590?text=Icon+8+Main',
+                        gallery: [
+                            'https://placehold.co/210x143?text=Icon+8+G1',
+                            'https://placehold.co/210x143?text=Icon+8+G2',
+                            'https://placehold.co/210x143?text=Icon+8+G3'
+                        ]
+                    }
+                };
+
+                iconButtons.forEach((btn, index) => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Don't close parent popup
+                        const iconNum = index + 1;
+                        const imageSet = iconImageSets[iconNum];
+
+                        if (imageSet) {
+                            // Update main image
+                            popupMainImg.src = imageSet.main;
+
+                            // Update gallery images
+                            popupGalleryImgs.forEach((galleryImg, i) => {
+                                if (imageSet.gallery[i]) {
+                                    galleryImg.src = imageSet.gallery[i];
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>

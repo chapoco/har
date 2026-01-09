@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <title>개노답 하렘 다크 판타지</title>
+    <link rel="icon" type="image/png" href="img/웹로고.png">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <script src="header.js"></script>
+        <script>renderHeader('');</script>
+
+        <!-- Background Image -->
+        <img class="bg-image" src="img/아르케논.png" alt="Background" />
+
+        <!-- Navigation Arrows -->
+        <div class="backdrop">
+            <div class="icon-wrapper pos-1">
+                <div class="icon-circle">
+                    <img src="img/right.png" alt="오른쪽 화살표" />
+                </div>
+            </div>
+            <div class="icon-wrapper pos-2">
+                <div class="icon-circle">
+                    <img src="img/right.png" alt="왼쪽 화살표" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Card -->
+    <div class="content-card">
+        <img class="card-image" src="img/아르케논.png" alt="Card Image" />
+        <div class="card-footer">
+            <div class="card-title">로딩 중...</div>
+            <div class="card-desc">슬라이드를 불러오는 중입니다...</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bgImage = document.querySelector('.bg-image');
+            const cardImage = document.querySelector('.card-image');
+            const cardTitle = document.querySelector('.card-title');
+            const cardDesc = document.querySelector('.card-desc');
+            const rightBtn = document.querySelector('.icon-wrapper.pos-1');
+            const leftBtn = document.querySelector('.icon-wrapper.pos-2');
+
+            // Define 4 slide data
+            const slides = [
+                {
+                    bgImage: 'img/아르케논.png',
+                    cardImage: 'img/아르케논.png',
+                    title: '\'위대한\' 왕국 아르케논',
+                    description: '세계의 유일한 대륙인 판게아를 통일한 아르케논에 오신 걸 환영합니다.<br/>치열한 권력 다툼 끝에 즉위한 국왕에게 새로운 걱정거리가 생겼군요.<br/>바로, 마왕 부활의 임박입니다.'
+                },
+                {
+                    bgImage: 'img/체스게임.png',
+                    cardImage: 'img/체스게임.png',
+                    title: 'Just a chess game',
+                    description: '자애롭고 온화한, 어머니 같은 신? 실수 투성이에다 어리버리한, 인간미 넘치는 신?<br />차라리 그런 클리셰적 스토리였다면 운명이 이토록 잔혹하지 않았을 겁니다.<br />모든 선악 전쟁은 신과 마신의 체스 게임일 뿐입니다. 그리고 체스말들의 목숨은 체크메이트를 위한 불가피한 희생일 뿐이죠.'
+                },
+                {
+                    bgImage: 'img/체크메이트.png',
+                    cardImage: 'img/체크메이트.png',
+                    title: '체크메이트!',
+                    description: '마왕은 이미 한번 체크메이트를 당한 전적이 있습니다. 나이트로 허를 찌르는 고전적인 전략이었죠.<br />이 일로 인해 가여운 마왕은 제대로 된 유언도 남기지 못한 채 무려 천 년 동안 잠들고 말았습니다.'
+                },
+                {
+                    bgImage: 'img/나이트 밴.png',
+                    cardImage: 'img/나이트 밴.png',
+                    title: '나이트 \'밴\'',
+                    description: '감히 비겁하게 순수 실력으로 압도하다뇨? 마신은 참을 수 없었습니다! 신의 최애 기물인 나이트를 금지 시켜 버렸죠.<br />그 결과 천 년 후에 마왕을 토벌할 파티원은 대륙에서 가장 약하고 어리석은 5인이 되었습니다.<br />그 덕분에 당신 같은 얼간이가 무려 마왕 토벌을 위한 파티의 파티장까지 될 수 있었죠.'
+                }
+            ];
+
+            let currentSlide = 0;
+
+            // Function to update slide
+            function updateSlide(index) {
+                const slide = slides[index];
+                bgImage.src = slide.bgImage;
+                cardImage.src = slide.cardImage;
+                cardTitle.textContent = slide.title;
+                cardDesc.innerHTML = slide.description;
+            }
+
+            // Right button - next slide
+            rightBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlide(currentSlide);
+            });
+
+            // Left button - previous slide
+            leftBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlide(currentSlide);
+            });
+
+            // Initialize with first slide
+            updateSlide(currentSlide);
+        });
+    </script>
+</body>
+
+</html>

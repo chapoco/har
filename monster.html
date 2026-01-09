@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <title>개노답 하렘 다크 판타지</title>
+    <link rel="icon" type="image/png" href="img/웹로고.png">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Content Area -->
+        <div class="monster-content">
+            <!-- Top Title Image -->
+            <img class="page-title-img" src="img/몬스터.png" alt="Page Title" />
+
+            <!-- Monster Grid -->
+            <div class="monster-grid">
+                <!-- Using Loop or Repeat for Monsters. Assuming placeholders for now based on original file -->
+
+                <!-- Repeat standard card structure -->
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 1</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 2</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 3</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 4</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 5</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 6</div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 7</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 8</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 9</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 10</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 11</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 12</div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 13</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 14</div>
+                    </div>
+                </div>
+                <div class="monster-card" style="background-image: url('https://placehold.co/174x226')">
+                    <div class="monster-card-overlay">
+                        <div class="monster-name">몬스터 15</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <script src="header.js"></script>
+        <script>renderHeader('monster');</script>
+
+        <!-- Reuse Party Popup Structure (since style.css classes are shared) -->
+        <div class="popup-overlay" id="monsterPopup">
+            <div class="popup-content">
+                <img class="popup-main-img" src="https://placehold.co/404x590" alt="Detail" />
+                <div class="popup-name">몬스터 이름</div>
+                <div class="popup-info">등급 / 속성</div>
+                <div class="popup-desc">몬스터 설명 텍스트<br />몬스터 설명 텍스트<br />몬스터 설명 텍스트</div>
+
+                <img class="popup-gallery-img g-1" src="https://placehold.co/210x143" />
+                <img class="popup-gallery-img g-2" src="https://placehold.co/210x143" />
+                <img class="popup-gallery-img g-3" src="https://placehold.co/210x143" />
+            </div>
+        </div>
+
+
+        <!-- Second Popup (Image View) -->
+        <div class="image-popup-overlay" id="imagePopup">
+            <img class="large-view-img" src="" alt="Large View" id="largeViewImg" />
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const monsterPopup = document.getElementById('monsterPopup');
+                const imagePopup = document.getElementById('imagePopup');
+                const largeViewImg = document.getElementById('largeViewImg');
+                const cards = document.querySelectorAll('.monster-card');
+                const galleryImages = document.querySelectorAll('.popup-gallery-img');
+
+                const popupName = monsterPopup.querySelector('.popup-name');
+                const popupMainImg = monsterPopup.querySelector('.popup-main-img');
+
+                // 1. Open Monster Detail Popup
+                cards.forEach(card => {
+                    card.addEventListener('click', () => {
+                        const name = card.querySelector('.monster-name').textContent;
+                        // const imgUrl = card.style.backgroundImage.slice(5, -2); // Extract URL
+
+                        popupName.textContent = name;
+                        // popupMainImg.src = imgUrl; 
+
+                        monsterPopup.classList.add('active');
+                    });
+                });
+
+                // 2. Open Image Popup (from gallery images)
+                galleryImages.forEach(img => {
+                    img.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Don't close parent popup
+                        largeViewImg.src = img.src; // Use the clicked image src
+                        imagePopup.classList.add('active');
+                    });
+                });
+
+                // 3. Close Image Popup
+                imagePopup.addEventListener('click', (e) => {
+                    if (e.target === imagePopup || e.target === largeViewImg) {
+                        imagePopup.classList.remove('active');
+                    }
+                });
+
+                // 4. Close Monster Detail Popup
+                monsterPopup.addEventListener('click', (e) => {
+                    if (e.target === monsterPopup) {
+                        monsterPopup.classList.remove('active');
+                    }
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
