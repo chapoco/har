@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개노답 하렘 다크 판타지 - Factions</title>
+    <link rel="icon" href="공통/파비콘.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="desktop-nav">
+            <a href="party.html" class="nav-item">Party</a>
+            <a href="key%20figures.html" class="nav-item">Key Figures</a>
+            <a href="faction.html" class="nav-item active">Factions</a>
+            <a href="monster.html" class="nav-item">Monsters</a>
+        </nav>
+
+        <div class="header-logo desktop-logo">
+            <a href="https://share.crack.wrtn.ai/v3snwy" target="_blank">
+                <img src="공통/플레이.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="mobile-header-elements">
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-header">
+            <button class="mobile-menu-close" aria-label="Close"></button>
+        </div>
+        <nav class="mobile-nav-links">
+            <a href="party.html" class="mobile-nav-item">Party</a>
+            <a href="key%20figures.html" class="mobile-nav-item">Key Figures</a>
+            <a href="faction.html" class="mobile-nav-item">Factions</a>
+            <a href="monster.html" class="mobile-nav-item">Monsters</a>
+        </nav>
+        <div class="mobile-menu-logo">
+            <img src="공통/플레이.png" alt="Logo">
+        </div>
+    </div>
+
+    <main>
+        <div class="background-layer">
+            <img class="bg-image" src="메인 페이지/배경.png" alt="Background">
+            <div class="overlay"></div>
+        </div>
+
+        <div class="content-layer">
+            <div class="party-container">
+                <!-- Top Image (Title) -->
+                <img class="party-title-img" src="세력/세력.png" alt="Factions Title">
+
+                <!-- Factions Grid -->
+                <div class="factions-grid">
+                    <!-- Church -->
+                    <div class="faction-card">
+                        <img class="faction-img" src="세력/교회.png" alt="교회">
+                        <div class="faction-info">
+                            <div class="faction-title">교회</div>
+                            <div class="faction-desc">대륙에서 유일하게 왕실에 ‘옳은 소리’를 내는 집단입니다.</div>
+                        </div>
+                    </div>
+
+                    <!-- Royal -->
+                    <div class="faction-card">
+                        <img class="faction-img" src="세력/왕실.png" alt="왕실">
+                        <div class="faction-info">
+                            <div class="faction-title">왕실</div>
+                            <div class="faction-desc">세계의 유일한 대륙을 정복한 위대한<br />왕국입니다.</div>
+                        </div>
+                    </div>
+
+                    <!-- Platt -->
+                    <div class="faction-card">
+                        <img class="faction-img" src="세력/플랫.png" alt="플랫">
+                        <div class="faction-info">
+                            <div class="faction-title">플랫</div>
+                            <div class="faction-desc">대륙 최대 규모의 도적 길드입니다.</div>
+                        </div>
+                    </div>
+
+                    <!-- Hughes -->
+                    <div class="faction-card">
+                        <img class="faction-img" src="세력/휴즈.png" alt="휴즈">
+                        <div class="faction-info">
+                            <div class="faction-title">휴즈</div>
+                            <div class="faction-desc">대륙 최대 규모의 여전사 길드입니다.</div>
+                        </div>
+                    </div>
+
+                    <!-- Belluz -->
+                    <div class="faction-card">
+                        <img class="faction-img" src="세력/벨루즈.png" alt="벨루즈">
+                        <div class="faction-info">
+                            <div class="faction-title">벨루즈</div>
+                            <div class="faction-desc">압도적으로 강한 권력을 가진 왕국의<br />귀족 가문입니다.</div>
+                        </div>
+                    </div>
+
+                    <!-- Muyoungdan -->
+                    <div class="faction-card">
+                        <img class="faction-img" src="세력/무영단.png" alt="무영단">
+                        <div class="faction-info">
+                            <div class="faction-title">무영단(無影團)</div>
+                            <div class="faction-desc">인간을 배신하고 마왕의 권력에 편승한<br />반사회적 집단입니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const closeBtn = document.querySelector('.mobile-menu-close');
+        const menuOverlay = document.querySelector('.mobile-menu-overlay');
+
+        function toggleMenu() {
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = menuOverlay.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+    </script>
+
+</body>
+
+</html>

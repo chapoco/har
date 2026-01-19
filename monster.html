@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개노답 하렘 다크 판타지 - Monsters</title>
+    <link rel="icon" href="공통/파비콘.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="desktop-nav">
+            <a href="party.html" class="nav-item">Party</a>
+            <a href="key%20figures.html" class="nav-item">Key Figures</a>
+            <a href="faction.html" class="nav-item">Factions</a>
+            <a href="monster.html" class="nav-item active">Monsters</a>
+        </nav>
+
+        <div class="header-logo desktop-logo">
+            <a href="https://share.crack.wrtn.ai/v3snwy" target="_blank">
+                <img src="공통/플레이.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="mobile-header-elements">
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-header">
+            <button class="mobile-menu-close" aria-label="Close"></button>
+        </div>
+        <nav class="mobile-nav-links">
+            <a href="party.html" class="mobile-nav-item">Party</a>
+            <a href="key%20figures.html" class="mobile-nav-item">Key Figures</a>
+            <a href="faction.html" class="mobile-nav-item">Factions</a>
+            <a href="monster.html" class="mobile-nav-item">Monsters</a>
+        </nav>
+        <div class="mobile-menu-logo">
+            <img src="공통/플레이.png" alt="Logo">
+        </div>
+    </div>
+
+    <main>
+        <div class="background-layer">
+            <img class="bg-image" src="메인 페이지/배경.png" alt="Background">
+            <div class="overlay"></div>
+        </div>
+
+        <div class="content-layer">
+            <div class="party-container">
+                <!-- Top Image (Title) -->
+                <img class="party-title-img" src="몬스터/몬스터.png" alt="Monsters Title">
+
+                <!-- Grid of Monsters (Reusing Key Figures Grid Style) -->
+                <div class="figures-grid">
+                    <!-- Row 1 -->
+                    <div class="figure-card" style="background-image: url('몬스터/코로블린.png');" data-name="코로블린"
+                        data-tag="블린족" data-desc="가장 약한 몬스터지만 방심은 금물입니다. 한 녀석이 있으면 주변에 무리가 있다는 뜻이니까요."
+                        data-bg="몬스터/코로블린.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">코로블린</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">코로블린</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">블린족</div>
+                            </div>
+                            <div class="mobile-info-desc">가장 약한 몬스터지만 방심은 금물입니다. 한 녀석이 있으면 주변에 무리가 있다는 뜻이니까요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/마지블린.png');" data-name="마지블린"
+                        data-tag="블린족" data-desc="코로블린들 사이에서는 비타민 혹은 엔돌핀 같은 존재입니다. 그들에게 힘을 주거든요."
+                        data-bg="몬스터/마지블린.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">마지블린</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">마지블린</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">블린족</div>
+                            </div>
+                            <div class="mobile-info-desc">코로블린들 사이에서는 비타민, 엔돌핀 같은 존재입니다. 그들에게 힘을 주거든요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/그룬블린.png');" data-name="그룬블린"
+                        data-tag="블린족 / 폰" data-desc="코로블린과 마지블린들을 이끄는 우두머리입니다. 부하들과는 다르게 귀여운 면모는 없어 보이네요."
+                        data-bg="몬스터/그룬블린.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">그룬블린</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">그룬블린</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">블린족 / 폰</div>
+                            </div>
+                            <div class="mobile-info-desc">코로블린과 마지블린들을 이끄는 우두머리입니다. 부하들과는 다르게 귀여운 면모는 없어 보이네요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/샌드본.png');" data-name="샌드본"
+                        data-tag="언데드" data-desc="당신이 좋다고 달려드는군요. 할 줄 아는 게 물어뜯는 것 밖에 없다는 사실이 문제지만요."
+                        data-bg="몬스터/샌드본.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">샌드본</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">샌드본</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">언데드</div>
+                            </div>
+                            <div class="mobile-info-desc">당신이 좋다고 달려드는군요. 할 줄 아는 게 물어뜯는 것 밖에 없다는 사실이 문제지만요.</div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="figure-card" style="background-image: url('몬스터/리잘리언.png');" data-name="리잘리언"
+                        data-tag="마물" data-desc="사막 여행이 불황인 이유가 여기에 있었군요." data-bg="몬스터/리잘리언.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">리잘리언</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">리잘리언</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">마물</div>
+                            </div>
+                            <div class="mobile-info-desc">사막 여행이 불황인 이유가 여기에 있었군요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/사하라크.png');" data-name="사하라크"
+                        data-tag="뱀 수인 / 폰" data-desc="가능하다고요? 그렇게 말한 사람 중에 살아 돌아온 사람은 없습니다." data-bg="몬스터/사하라크.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">사하라크</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">사하라크</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">뱀 수인 / 폰</div>
+                            </div>
+                            <div class="mobile-info-desc">가능하다고요? 그렇게 말한 사람 중에 살아 돌아온 사람은 없습니다.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/물컹이.png');" data-name="물컹이" data-tag="마물"
+                        data-desc="이름 그대로 물컹거립니다. 당신을 잡아 먹을 수도 있고요." data-bg="몬스터/물컹이.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">물컹이</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">물컹이</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">마물</div>
+                            </div>
+                            <div class="mobile-info-desc">이름 그대로 물컹거립니다. 당신을 잡아 먹을 수도 있고요.</div>
+                        </div>
+                    </div>
+
+                    <div class="figure-card" style="background-image: url('몬스터/아크트런.png');" data-name="아크트런"
+                        data-tag="마물" data-desc="당신이 아르케논의 늪지를 거닐고 있다면, 나무 한그루도 경계해야 합니다." data-bg="몬스터/아크트런.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">아크트런</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">아크트런</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">마물</div>
+                            </div>
+                            <div class="mobile-info-desc">당신이 아르케논의 늪지를 거닐고 있다면, 나무 한그루도 경계해야 합니다.</div>
+                        </div>
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="figure-card" style="background-image: url('몬스터/마녀.png');" data-name="마녀"
+                        data-tag="마물 / 폰" data-desc="걸어다니는 마물 공장입니다. 다만, 생산품 중에 당신에게 필요한 건 없지만요." data-bg="몬스터/마녀.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">마녀</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">마녀</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">마물 / 폰</div>
+                            </div>
+                            <div class="mobile-info-desc">걸어다니는 마물 공장입니다. 다만, 생산품 중에 당신에게 필요한 건 없지만요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/드락.png');" data-name="드락" data-tag="용족"
+                        data-desc="아직 새끼지만 의젓하게도 스스로 자신의 밥벌이를 하러 나왔군요." data-bg="몬스터/드락.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">드락</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">드락</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">용족</div>
+                            </div>
+                            <div class="mobile-info-desc">아직 새끼지만 의젓하게도 스스로 자신의 밥벌이를 하러 나왔군요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/게이저.png');" data-name="게이저"
+                        data-tag="엘프 / 언데드" data-desc="설원에서 누군가의 시선이 느껴진다면 일단 몸을 숙이십시오." data-bg="몬스터/게이저.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">게이저</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">게이저</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">엘프 / 언데드</div>
+                            </div>
+                            <div class="mobile-info-desc">설원에서 누군가의 시선이 느껴진다면 일단 몸을 숙이십시오.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/드락서스.png');" data-name="드락서스"
+                        data-tag="용족 / 폰" data-desc="연례 행사처럼 드락서스 토벌대가 마을에서 출격합니다. 토벌 당하는 건 대개 본인들이지만요."
+                        data-bg="몬스터/드락서스.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">드락서스</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">드락서스</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">용족 / 폰</div>
+                            </div>
+                            <div class="mobile-info-desc">연례 행사처럼 드락서스 토벌대가 마을에서 출격합니다. 토벌 당하는 건 대개 본인들이지만요.</div>
+                        </div>
+                    </div>
+                    <!-- Row 4 -->
+                    <div class="figure-card" style="background-image: url('몬스터/서큐버스.png');" data-name="서큐버스"
+                        data-tag="악마" data-desc="설명이 필요할까요? 당신의 정기를 노립니다. 그리고 목숨도요." data-bg="몬스터/서큐버스.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">서큐버스</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">서큐버스</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">악마</div>
+                            </div>
+                            <div class="mobile-info-desc">설명이 필요할까요? 당신의 정기를 노립니다. 그리고 목숨도요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/바빌론.png');" data-name="바빌론" data-tag="악마"
+                        data-desc="암흑계에서 당신을 반기는 첫 주민일 겁니다. 뭐, 텃새는 좀 있을지도 모르겠네요." data-bg="몬스터/바빌론.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">바빌론</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">바빌론</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">악마</div>
+                            </div>
+                            <div class="mobile-info-desc">암흑계에서 당신을 반기는 첫 주민일 겁니다. 뭐, 텃새는 좀 있을지도 모르겠네요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/데몰릭.png');" data-name="데몰릭"
+                        data-tag="악마 / 폰" data-desc="사흉을 제외한 마왕군 중 가장 강합니다. 사흉의 T.O.가 나는 순간을 호시탐탐 노리고 있죠."
+                        data-bg="몬스터/데몰릭.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">데몰릭</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">데몰릭</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">악마 / 폰</div>
+                            </div>
+                            <div class="mobile-info-desc">사흉을 제외한 마왕군 중 가장 강합니다. 사흉의 T.O.가 나는 순간을 호시탐탐 노리고 있죠.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/무영단원.png');" data-name="무영단원"
+                        data-tag="인간 / 무영단" data-desc="당신 하나의 목숨을 위해 밤낮 없이 철야를 뜁니다." data-bg="몬스터/무영단원.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">무영단원</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">무영단원</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">무영단원</div>
+                            </div>
+                            <div class="mobile-info-desc">당신 하나의 목숨을 위해 밤낮 없이 철야를 뜁니다.</div>
+                        </div>
+                    </div>
+                    <!-- Row 5 -->
+                    <div class="figure-card" style="background-image: url('몬스터/록시.png');" data-name="록시"
+                        data-tag="엘프 / 나이트" data-desc="몬스터도 아닌데 사흉의 지위라니. 라인을 잘 탔군요." data-bg="몬스터/록시.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">록시</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">록시</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">엘프 / 나이트</div>
+                            </div>
+                            <div class="mobile-info-desc">몬스터도 아닌데 사흉의 지위라니. 라인을 잘 탔군요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/말락.png');" data-name="말락"
+                        data-tag="언데드 / 비숍" data-desc="그의 세치 혀에 정신 팔지 마십시오. 당신의 영혼은 소중하니까요." data-bg="몬스터/말락.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">말락</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">말락</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">언데드 / 비숍</div>
+                            </div>
+                            <div class="mobile-info-desc">그의 세치 혀에 정신 팔지 마십시오. 당신의 영혼은 소중하니까요.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/카이저.png');" data-name="카이저"
+                        data-tag="마물 / 룩" data-desc="진격, 돌격, 전진. 카이저와 대화할 때는 이 세 가지 단어만 기억하십시오." data-bg="몬스터/카이저.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">카이저</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">카이저</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">마물 / 룩</div>
+                            </div>
+                            <div class="mobile-info-desc">진격, 돌격, 전진. 카이저와 대화할 때는 이 세 가지 단어만 기억하십시오.</div>
+                        </div>
+                    </div>
+                    <div class="figure-card" style="background-image: url('몬스터/릴리스.png');" data-name="릴리스"
+                        data-tag="악마 / 퀸" data-desc="말락과는 다른 의미로 영혼을 뺏어가는 데에 선수입니다." data-bg="몬스터/릴리스.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">릴리스</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">릴리스</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">악마 / 퀸</div>
+                            </div>
+                            <div class="mobile-info-desc">말락과는 다른 의미로 영혼을 뺏어가는 데에 선수입니다.</div>
+                        </div>
+                    </div>
+                    <!-- Row 6 -->
+                    <div class="figure-card" style="background-image: url('몬스터/메피리온.png');" data-name="메피리온"
+                        data-tag="마왕" data-desc="봉인에서 풀려난 마왕입니다. 천 년 만에 켠 기지개는 어떤 느낌일까요?" data-bg="몬스터/메피리온.png">
+                        <div class="figure-gradient">
+                            <div class="figure-name">메피리온</div>
+                        </div>
+                        <div class="mobile-info-overlay">
+                            <div class="mobile-info-name">메피리온</div>
+                            <div class="mobile-info-tag-container">
+                                <div class="mobile-info-tag">마왕</div>
+                            </div>
+                            <div class="mobile-info-desc">봉인에서 풀려난 마왕입니다. 천 년 만에 켠 기지개는 어떤 느낌일까요?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="mobile-pagination-controls">
+                    <div class="pagination-btn prev-btn" id="prev-btn">이전</div>
+                    <div class="pagination-indicator" id="page-indicator">1/5</div>
+                    <div class="pagination-btn next-btn" id="next-btn">다음</div>
+                </div>
+
+                <!-- Modal structure reused -->
+                <div id="monster-modal" class="modal-overlay">
+                    <div class="modal-content" id="modal-content-bg">
+                        <!-- Close Button -->
+                        <div class="modal-close" onclick="closeModal()"></div>
+
+                        <!-- Gradient & Text -->
+                        <div class="modal-gradient">
+                            <div class="modal-name" id="modal-name">Monster Name</div>
+                            <div class="modal-tag">
+                                <span class="modal-tag-text" id="modal-tag">Tag / Info</span>
+                            </div>
+                            <div class="modal-desc" id="modal-desc">
+                                Description goes here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const closeBtn = document.querySelector('.mobile-menu-close');
+        const menuOverlay = document.querySelector('.mobile-menu-overlay');
+
+        function toggleMenu() {
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = menuOverlay.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+
+        const modal = document.getElementById('monster-modal');
+        const modalContentBg = document.getElementById('modal-content-bg');
+        const modalName = document.getElementById('modal-name');
+        const modalTag = document.getElementById('modal-tag');
+        const modalDesc = document.getElementById('modal-desc');
+        const cards = document.querySelectorAll('.figure-card');
+
+        // Pagination State
+        let currentPage = 1;
+        const itemsPerPage = 4;
+        const totalItems = cards.length; // 18
+        const totalPages = Math.ceil(totalItems / itemsPerPage); // 5
+
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const pageIndicator = document.getElementById('page-indicator');
+
+        function updatePagination() {
+            // Only affect mobile view
+            if (window.innerWidth > 768) {
+                cards.forEach(card => card.style.display = ''); // Reset display
+                return;
+            }
+
+            // Calculate start and end index
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+
+            cards.forEach((card, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    card.style.display = 'block'; // Or flex if parent is flex
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update Controls
+            pageIndicator.textContent = `${currentPage}/${totalPages}`;
+
+            if (currentPage === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (currentPage === totalPages) {
+                nextBtn.classList.add('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+            }
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updatePagination();
+                    // Scroll to top of list if needed? Matches party-container top?
+                    // User didn't request scroll, but it's nice.
+                }
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updatePagination();
+                }
+            });
+        }
+
+        // Initialize and Resize listener
+        window.addEventListener('load', updatePagination);
+        window.addEventListener('resize', updatePagination);
+
+        // Interaction Logic
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    // Mobile: Toggle Overlay
+                    // Close others
+                    cards.forEach(c => {
+                        if (c !== card) c.classList.remove('active');
+                    });
+
+                    // Toggle current
+                    card.classList.toggle('active');
+                } else {
+                    // Desktop: Open Modal
+                    const name = card.getAttribute('data-name');
+                    const tag = card.getAttribute('data-tag');
+                    const desc = card.getAttribute('data-desc');
+                    const bg = card.getAttribute('data-bg');
+
+                    modalName.textContent = name;
+                    modalTag.textContent = tag;
+                    modalDesc.textContent = desc;
+                    modalContentBg.style.backgroundImage = `url('${bg}')`;
+
+                    modal.classList.add('active');
+                }
+            });
+        });
+
+        // Close Modal
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>
